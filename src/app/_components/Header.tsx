@@ -1,8 +1,29 @@
+import Image from "next/image";
+import Link from "next/link";
 
-export const Header = ()=>{
-    return(
-        <div>
-            
+export const Header = () => {
+  return (
+    <>
+      <div style={{ padding: 20 }}>
+        <div style={{ display: "flex" }}>
+          <Link href={"/"}>
+            <Image
+              src="/full-stack-logo.png"
+              alt="full stack logo"
+              width={50}
+              height={50}
+              priority
+            />
+          </Link>
+          <h1>Header</h1>
         </div>
-    )
-}
+        <div>
+          <Link href={"/"}>Home</Link>
+          <span> | </span>
+          <Link href={"/about"}> About</Link>
+        </div>
+      </div>
+      <div style={{height: 2, width: '100%', backgroundColor: 'white'}}/>
+    </>
+  );
+};

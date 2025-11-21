@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-export default function Home() {
+export default function HomePage() {
 
-  console.log('executing...');
+  console.log(': executing HomePage ...');
 
   return (
     <div className={styles.page}>
