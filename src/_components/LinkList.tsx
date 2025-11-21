@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 interface LinkListProps {
+  name:string;
   linkCount: number;
 }
 
-export function LinkList({ linkCount }: LinkListProps) {
+export function LinkList({ linkCount, name }: LinkListProps) {
   
   const arr: number[] = [...Array(linkCount)].map((_, i) => i + 1);
 
@@ -18,8 +19,8 @@ export function LinkList({ linkCount }: LinkListProps) {
       }}
     >
       {[...arr].map((num, index) => (
-        <Link key={index} href={`/blog/post-${String(num)}`}>
-          {`Blog ${num}`}
+        <Link key={index} href={`/${(name.toLowerCase())}/post-${String(num)}`}>
+          {`${name} ${num}`}
         </Link>
       ))}
     </div>

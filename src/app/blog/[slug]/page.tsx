@@ -25,6 +25,14 @@ export default function IndividualBlogPage() {
         >
           <h1>Individual Blog Page</h1>
           <br />
+          <Image
+            src="/assets/Creative-image.png"
+            alt="professional-image"
+            width={270}
+            height={400}
+            priority
+          />
+          <br />
           <p>the post ...</p>
         </div>
       </main>

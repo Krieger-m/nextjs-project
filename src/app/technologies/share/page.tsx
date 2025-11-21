@@ -5,12 +5,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
-  description: "About Page",
+  description: "Tecnologies Page",
 };
 
 
-export default function AboutPage() {
-  console.log(": executing AboutPage ...");
+export default function TechnologiesPage() {
+  console.log(": executing Technologies/share ...");
 
   return (
     <div className={styles.page}>
@@ -23,17 +23,9 @@ export default function AboutPage() {
             alignItems: "center",
           }}
         >
-          <h1>About</h1>
+          <h1>Technologies/share Page</h1>
           <br />
-          <Image
-                      src="/assets/Minimalist-image.png"
-                      alt="professional-image"
-                      width={270}
-                      height={400}
-                      priority
-                    />
-          <br />
-          <p>the details ...</p>
+          <p>share the tech ...</p>
         </div>
       </main>
     </div>

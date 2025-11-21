@@ -1,22 +1,16 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
-import { start } from "repl";
 import Link from "next/link";
 import { LinkList } from "@/_components/LinkList";
 
-
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
-  description: "Blogs Page",
+  description: "Tecnologies Page",
 };
 
-
-export default function BlogsPage() {
-  console.log(": executing BlogsPage ...");
-
-  
-  
+export default function TechnologiesPage() {
+  console.log(": executing Technologies ...");
 
   return (
     <div className={styles.page}>
@@ -29,12 +23,23 @@ export default function BlogsPage() {
             alignItems: "center",
           }}
         >
-          <h1>Blogs Page</h1>
+          <h1>Technologies Page</h1>
           <br />
-          <p>the posts ...</p>
-          <br/>
-          <LinkList name="Blog" linkCount={10}/>
-
+          <Image
+            src="/assets/Professional-img.png"
+            alt="professional-image"
+            width={270}
+            height={400}
+            priority
+          />
+          <br />
+          <p>the tech ...</p>
+          <br />
+        <LinkList name="Technologies" linkCount={5}/>
+          <br />
+          <Link href={"/technologies/share"}>
+            👆🏻 click here to share the tech ...
+          </Link>
         </div>
       </main>
     </div>

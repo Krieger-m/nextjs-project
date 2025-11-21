@@ -22,6 +22,10 @@ export const Header = () => {
           <span> | </span>
           <Link href={"/blog"}> Blog</Link>
           <span> | </span>
+          <Link href={"/technologies"}> Tech</Link>
+          <span> | </span>
+          <Link href={"/community"}> Community</Link>
+          <span> | </span>
           <Link href={"/about"}> About</Link>
         </div>
       </div>
