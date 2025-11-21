@@ -18,7 +18,7 @@ export function LinkList({ linkCount }: LinkListProps) {
       }}
     >
       {[...arr].map((num, index) => (
-        <Link key={index} href={`/blog/${String(num)}`}>
+        <Link key={index} href={`/blog/post-${String(num)}`}>
           {`Blog ${num}`}
         </Link>
       ))}
