@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./styles/page.module.css";
 import { Metadata } from "next";
-import { FeaturedContent } from "./_components/FeaturedContent";
+import { FeaturedContent } from "../_components/FeaturedContent";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
