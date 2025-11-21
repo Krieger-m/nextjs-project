@@ -4,7 +4,7 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <>
-      <div style={{ padding: 20 }}>
+      <div style={{ padding: 20, backgroundColor: '#2a2a2cff' }}>
         <div style={{ display: "flex", alignItems: 'center'}}>
           <Link href={"/"}>
             <Image
