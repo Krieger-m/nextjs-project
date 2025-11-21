@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <>
       <div style={{ padding: 20 }}>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", alignItems: 'center'}}>
           <Link href={"/"}>
             <Image
               src="/full-stack-logo.png"
