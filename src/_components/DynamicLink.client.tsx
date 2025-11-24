@@ -8,7 +8,7 @@ interface DynamicLinkTestProps {
   link: string;
 }
 
-export function DynamicLinkTest({ 
+export function DynamicLink({ 
     content, 
     link,
 }: DynamicLinkTestProps) {

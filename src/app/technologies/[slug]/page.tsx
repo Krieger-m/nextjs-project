@@ -2,14 +2,12 @@ import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
 import Link from "next/link";
-import { DynamicLinkTest } from "@/_components/DynamicLinkTest";
-
+import { DynamicLink } from "@/_components/DynamicLink.client";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
   description: "Individual Tech Page",
 };
-
 
 export default function IndividualBlogPage() {
   console.log(": executing IndividualTechPage ...");
@@ -36,11 +34,13 @@ export default function IndividualBlogPage() {
           />
           <br />
           <p>the tech ...</p>
-           <br />
-         
-           <DynamicLinkTest link="share" content="👆🏻 click here to share the tech ..."/>
-           <br />
-  
+          <br />
+
+          <DynamicLink
+            link="share"
+            content="👆🏻 click here to share the tech ..."
+          />
+          <br />
         </div>
       </main>
     </div>
