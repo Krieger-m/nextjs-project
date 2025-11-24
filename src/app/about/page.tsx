@@ -2,6 +2,8 @@ import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
 import qs from "qs";
+import { Quote } from "@/_components/Quote";
+import { RichText } from "@/_components/RichText";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
@@ -17,6 +19,7 @@ const aboutQuery = qs.stringify({
     blocks: {
       populate: "*",
     },
+    // populate: "*",
   },
 });
 
@@ -58,15 +61,15 @@ export default async function AboutPage() {
           <h1>About</h1>
           <br />
           <Image
-            src="/assets/Minimalist-image.png"
-            alt="professional-image"
+            src={`http://localhost:1337${data.blocks[3].file.url}`}
+            alt={data.blocks[3].file.alternativeText}
             width={270}
             height={400}
             priority
           />
           <br />
-          <p>the details ...</p>
-
+          <Quote {...data.blocks[0]}/>
+          <RichText {...data.blocks[1]}/>
           {/* <h3>{data.title}</h3> */}
           <br />
           <Image
