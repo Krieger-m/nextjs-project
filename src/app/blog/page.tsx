@@ -4,6 +4,9 @@ import { Metadata } from "next";
 import { start } from "repl";
 import Link from "next/link";
 import { LinkList } from "@/_components/LinkList";
+import { getResponse } from "@/data/getResponse";
+import qs from "qs";
+
 
 
 export const metadata: Metadata = {
@@ -12,11 +15,26 @@ export const metadata: Metadata = {
 };
 
 
-export default function BlogsPage() {
+const blogsQuery = qs.stringify({
+  populate: {
+    blocks: {
+      populate: "*",
+    },
+    populate: "*",
+  },
+});
+
+
+
+export default async function BlogsPage() {
   console.log(": executing BlogsPage ...");
 
-  
-  
+  const resJson = await getResponse("http://localhost:1337",
+    "/api/articles?",blogsQuery)
+  const data = resJson.data; 
+
+  console.log('data: ')
+  console.log(data)
 
   return (
     <div className={styles.page}>
@@ -33,8 +51,9 @@ export default function BlogsPage() {
           <br />
           <p>the posts ...</p>
           <br/>
-          <LinkList name="Blog" linkCount={10}/>
-
+          {data.map((entry:any, index:number)=>(
+            <Link key={index} href={`/blog/${entry.slug}`}>{entry.title}</Link>
+          ))}
         </div>
       </main>
     </div>

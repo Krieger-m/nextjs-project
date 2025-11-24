@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import qs from "qs";
 import { Quote } from "@/_components/Quote";
 import { RichText } from "@/_components/RichText";
+import { getResponse } from "@/data/getResponse";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
@@ -23,11 +24,7 @@ const aboutQuery = qs.stringify({
   },
 });
 
-async function getResponse(url: string, path: string, query: string) {
-  const res = await fetch(`${url}${path}${query}`);
-  const resJson = await res.json();
-  return resJson;
-}
+
 
 export default async function AboutPage() {
   console.log(": executing AboutPage ...");
@@ -61,20 +58,20 @@ export default async function AboutPage() {
           <h1>About</h1>
           <br />
           <Image
-            src={`http://localhost:1337${data.blocks[3].file.url}`}
-            alt={data.blocks[3].file.alternativeText}
+            src={`http://localhost:1337${data.blocks[0].file.url}`}
+            alt={data.blocks[0].file.alternativeText}
             width={270}
             height={400}
             priority
           />
           <br />
-          <Quote {...data.blocks[0]}/>
-          <RichText {...data.blocks[1]}/>
+          <Quote {...data.blocks[1]}/>
+          <RichText {...data.blocks[2]}/>
           {/* <h3>{data.title}</h3> */}
           <br />
           <Image
-            src={`http://localhost:1337${data.blocks[2].file.url}`}
-            alt={data.blocks[2].file.alternativeText}
+            src={`http://localhost:1337${data.blocks[3].file.url}`}
+            alt={data.blocks[3].file.alternativeText}
             width={950}
             height={450}
           ></Image>
