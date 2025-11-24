@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
+import Link from "next/link";
+import { DynamicLinkTest } from "@/_components/DynamicLinkTest";
 
 
 export const metadata: Metadata = {
@@ -34,6 +36,11 @@ export default function IndividualBlogPage() {
           />
           <br />
           <p>the tech ...</p>
+           <br />
+         
+           <DynamicLinkTest link="share" content="👆🏻 click here to share the tech ..."/>
+           <br />
+  
         </div>
       </main>
     </div>

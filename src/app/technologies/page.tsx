@@ -36,10 +36,7 @@ export default function TechnologiesPage() {
           <p>the tech ...</p>
           <br />
         <LinkList name="Technologies" linkCount={5}/>
-          <br />
-          <Link href={"/technologies/share"}>
-            👆🏻 click here to share the tech ...
-          </Link>
+         
         </div>
       </main>
     </div>

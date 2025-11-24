@@ -23,9 +23,9 @@ export default function TechnologiesPage() {
             alignItems: "center",
           }}
         >
-          <h1>Technologies/share Page</h1>
+          <h1>Individual Tech/share Page</h1>
           <br />
-          <p>share the tech ...</p>
+          <p>sharing the tech ...</p>
         </div>
       </main>
     </div>
