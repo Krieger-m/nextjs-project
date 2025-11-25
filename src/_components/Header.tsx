@@ -20,15 +20,14 @@ export const Header = () => {
         </div>
         <div>
           <NavLink target="/" content="Home"></NavLink>
-          <Link href={"/"}>Home</Link>
           <span> | </span>
-          <Link href={"/blog"}> Blog</Link>
+          <NavLink target="/blog" content="Blog"></NavLink>
           <span> | </span>
-          <Link href={"/technologies"}> Tech</Link>
+          <NavLink target="/technologies" content="Tech"></NavLink>
           <span> | </span>
-          <Link href={"/authors"}> Authors</Link>
+          <NavLink target="/authors" content="Authors"></NavLink>
           <span> | </span>
-          <Link href={"/about"}> About</Link>
+          <NavLink target="/about" content="About"></NavLink>
         </div>
       </div>
       <div style={{height: 2, width: '100%', backgroundColor: 'white'}}/>
