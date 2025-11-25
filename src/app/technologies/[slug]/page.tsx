@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Individual Tech Page",
 };
 
-export default function IndividualBlogPage() {
+export default function IndividualTechPage() {
   console.log(": executing IndividualTechPage ...");
 
   return (

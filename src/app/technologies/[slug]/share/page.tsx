@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 
-export default function TechnologiesPage() {
+export default function SharePage() {
   console.log(": executing Technologies/share ...");
 
   return (

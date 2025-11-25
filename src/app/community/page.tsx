@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 
-export default function TechnologiesPage() {
+export default function CommunityPage() {
   console.log(": executing Community ...");
 
   return (
