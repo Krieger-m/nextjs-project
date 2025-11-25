@@ -19,7 +19,7 @@ export function SlideShow({ images }: SlideShowProps) {
         return ()=> clearInterval(interval);
     }, []);
 
-    console.log(currentImageIndex)
+    // console.log(currentImageIndex)
   
     return (
     <>
