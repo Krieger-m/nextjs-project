@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NavLink } from "./NavLink";
 
 export const Header = () => {
   return (
@@ -18,6 +19,7 @@ export const Header = () => {
           <h1>Header</h1>
         </div>
         <div>
+          <NavLink target="/" content="Home"></NavLink>
           <Link href={"/"}>Home</Link>
           <span> | </span>
           <Link href={"/blog"}> Blog</Link>

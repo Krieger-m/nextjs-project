@@ -35,7 +35,6 @@ export function SlideShow({ images }: SlideShowProps) {
       <div
         style={{
           width: "100vw",
-        //   maxHeight: 700,
           backgroundImage: `url(http://localhost:1337${images[currentImageIndex].url})`,
           backgroundSize: "cover", // makes it fill the div
           backgroundPosition: "center", // centers the image
