@@ -1,16 +1,52 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
-
+import qs from "qs";
+import { getResponse } from "@/data/getResponse";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
   description: "Individual Blog Page",
 };
 
+interface IndividualBlogPageProps{
+  params: Promise<{ slug: string }>;
+}
 
-export default function IndividualBlogPage() {
+const individualBlogQuery = (slug: string) =>
+  qs.stringify({
+    filters: {
+      slug: {
+        $eq: slug,
+      },
+    },
+    populate: {
+      blocks: {
+        populate: "*",
+      },
+      cover: {
+        populate: "*",
+
+      },
+    },
+  });
+
+export default async function IndividualBlogPage({
+  params,
+}: IndividualBlogPageProps) {
   console.log(": executing IndividualBlogPage ...");
+  
+  const resJson = await getResponse(
+    "http://localhost:1337",
+    "/api/articles?",
+    `${individualBlogQuery((await params).slug)}`
+  );
+  
+  // console.log('resJson: ')
+  // console.log(resJson.data[0])
+  
+  // console.log('media-block: ')
+  // console.log(resJson.data[0].cover.url)
 
   return (
     <div className={styles.page}>
@@ -23,17 +59,17 @@ export default function IndividualBlogPage() {
             alignItems: "center",
           }}
         >
-          <h1>Individual Blog Page</h1>
+          <h1>{resJson.data[0].title}</h1>
           <br />
           <Image
-            src="/assets/Creative-image.png"
-            alt="professional-image"
-            width={270}
-            height={400}
+            src={`http://localhost:1337${resJson.data[0].cover.url}`}
+            alt={resJson.data[0].cover.alternativeText}
+            width={600}
+            height={370}
             priority
           />
           <br />
-          <p>the post ...</p>
+          <p>{resJson.data[0].description}</p>
         </div>
       </main>
     </div>
