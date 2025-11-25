@@ -3,6 +3,8 @@ import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
 import qs from "qs";
 import { getResponse } from "@/data/getResponse";
+import { RichText } from "@/_components/RichText";
+import { Quote } from "@/_components/Quote";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
@@ -70,6 +72,12 @@ export default async function IndividualBlogPage({
           />
           <br />
           <p>{resJson.data[0].description}</p>
+          <br/>
+          <RichText body={resJson.data[0].blocks[0].body}/>
+          <br/>
+          <Quote title={resJson.data[0].blocks[1].title} body={resJson.data[0].blocks[1].body}/>
+          <br/>
+          <RichText body={resJson.data[0].blocks[3].body}/>
         </div>
       </main>
     </div>
