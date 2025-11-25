@@ -45,13 +45,7 @@ export default async function IndividualBlogPage({
     `${individualBlogQuery((await params).slug)}`
   );
   
-  // console.log('resJson: ')
-  // console.log(resJson.data[0])
-  
-  // console.log('media-block: ')
-  // console.log(resJson.data[0].cover.url)
 
-  console.log(resJson.data[0].blocks[4].files)
 
   return (
     <div className={styles.page}>

@@ -26,7 +26,7 @@ export default async function AuthorsPage() {
     authorsQuery
   );
   const data = resJson.data;
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className={styles.page}>

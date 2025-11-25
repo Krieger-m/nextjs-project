@@ -36,13 +36,6 @@ export default async function AboutPage() {
   );
   const data = resJson.data;
 
-  console.log("aboutQuery: ");
-  console.log(aboutQuery);
-  console.log("resJson: ");
-  console.log(resJson);
-
-  console.log("data : ");
-  console.log(data);
 
   return (
     <div className={styles.page}>
