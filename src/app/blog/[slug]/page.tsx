@@ -5,6 +5,7 @@ import qs from "qs";
 import { getResponse } from "@/data/getResponse";
 import { RichText } from "@/_components/RichText";
 import { Quote } from "@/_components/Quote";
+import { SlideShow } from "@/_components/SlideShow";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
@@ -50,6 +51,8 @@ export default async function IndividualBlogPage({
   // console.log('media-block: ')
   // console.log(resJson.data[0].cover.url)
 
+  console.log(resJson.data[0].blocks[4].files)
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -78,6 +81,8 @@ export default async function IndividualBlogPage({
           <Quote title={resJson.data[0].blocks[1].title} body={resJson.data[0].blocks[1].body}/>
           <br/>
           <RichText body={resJson.data[0].blocks[3].body}/>
+          <br/>
+          <SlideShow images={resJson.data[0].blocks[4].files}/>
         </div>
       </main>
     </div>
