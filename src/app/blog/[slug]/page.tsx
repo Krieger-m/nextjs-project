@@ -40,8 +40,8 @@ export default async function IndividualBlogPage({
   console.log(": executing IndividualBlogPage ...");
   
   const resJson = await getResponse(
-    "http://localhost:1337",
-    "/api/articles?",
+    "localhost:1337",
+    "api/articles",
     `${individualBlogQuery((await params).slug)}`
   );
   

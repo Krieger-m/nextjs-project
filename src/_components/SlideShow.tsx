@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -7,23 +7,22 @@ interface SlideShowProps {
 }
 
 export function SlideShow({ images }: SlideShowProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    
-    
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex < images.length - 1 ? prevIndex + 1 : 0
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            setCurrentImageIndex((prevIndex)=> prevIndex < images.length-1 ? prevIndex+1 : 0);
-        }, 5000);
-        return ()=> clearInterval(interval);
-    }, []);
+  // console.log(currentImageIndex)
 
-    // console.log(currentImageIndex)
-  
-    return (
+  return (
     <>
-        {/* {images.map((image:any, index)=>(
+      {/* {images.map((image:any, index)=>(
             <Image
                 key={index}
                 src={`http://localhost:1337${image.url}`}
@@ -33,16 +32,18 @@ export function SlideShow({ images }: SlideShowProps) {
 
             />
         ))} */}
-        <Image
-            src={`http://localhost:1337${images[currentImageIndex].url}`}
-            alt={images[currentImageIndex].alternativeText}
-            width={640}
-            height={400}
-
-        />
-        <div>
-
-        </div>
+      <div
+        style={{
+          width: "100vw",
+        //   maxHeight: 700,
+          backgroundImage: `url(http://localhost:1337${images[currentImageIndex].url})`,
+          backgroundSize: "cover", // makes it fill the div
+          backgroundPosition: "center", // centers the image
+          backgroundRepeat: "no-repeat", // prevents tiling
+          height: 400,
+        }}
+      >
+      </div>
     </>
   );
 }

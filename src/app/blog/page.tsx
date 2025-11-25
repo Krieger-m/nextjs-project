@@ -29,8 +29,8 @@ const blogsQuery = qs.stringify({
 export default async function BlogsPage() {
   console.log(": executing BlogsPage ...");
 
-  const resJson = await getResponse("http://localhost:1337",
-    "/api/articles?",blogsQuery)
+  const resJson = await getResponse("localhost:1337",
+    "api/articles",blogsQuery)
   const data = resJson.data; 
 
   // console.log('data: ')

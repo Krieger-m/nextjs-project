@@ -30,8 +30,8 @@ export default async function AboutPage() {
   console.log(": executing AboutPage ...");
 
   const resJson = await getResponse(
-    "http://localhost:1337",
-    "/api/about?",
+    "localhost:1337",
+    "api/about",
     aboutQuery
   );
   const data = resJson.data;
