@@ -25,7 +25,6 @@ export default function SharePage() {
         >
       <header style={{
         gap: '3rem',
-        margin: '3rem auto 5rem auto',
         width: '90%',
         maxWidth: '75rem',
         color: '#ffffffff',
