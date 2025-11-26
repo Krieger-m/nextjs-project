@@ -191,3 +191,30 @@ async function initData() {
 }
 
 initData();
+
+/*
+// template data for the share page
+{
+  title: 'Haskell',
+  slug: 'haskell',
+  image: '/images/haskell.png',
+  summary:
+    'A purely functional programming language with strong static typing and lazy evaluation, widely used in academia and industry for reliable, concise code.',
+  instructions: `
+    1. Install Haskell:
+       Download and install the Glasgow Haskell Compiler (GHC) and Stack tool.
+
+    2. Learn syntax:
+       Practice with functions, pattern matching, and type declarations.
+
+    3. Explore functional concepts:
+       Understand immutability, higher-order functions, and monads.
+
+    4. Build projects:
+       Use Stack or Cabal to create and manage Haskell applications.
+  `,
+  creator: 'Simon Peyton Jones',
+  creator_email: 'simonpj@example.com',
+},
+
+*/
