@@ -28,7 +28,7 @@ export default function SharePage() {
         margin: '3rem auto 5rem auto',
         width: '90%',
         maxWidth: '75rem',
-        color: '#ddd6cb',
+        color: '#ffffffff',
         fontSize: '1.5rem',
       }}>
     <h1>

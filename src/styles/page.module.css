@@ -1,6 +1,6 @@
 .page {
   --background: #fafafa;
-  --foreground: #fff;
+  --foreground: #ffffff;
 
   --text-primary: #000;
   --text-secondary: #666;
@@ -131,8 +131,8 @@ a.secondary {
     --background: #000;
     --foreground: #000;
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
@@ -152,7 +152,7 @@ a.secondary {
   font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  color: #b3aea5;
+  color: #b4b4b4;
   font-weight: bold;
 }
 
@@ -166,13 +166,13 @@ a.secondary {
   background: #1c2027;
   font-size: 1.25rem;
   font-family: 'Montserrat', sans-serif;
-  color: #ddd6cb;
+  color: #ffffff;
   margin-bottom: 20;
 }
 
 .form input:focus,
 .form textarea:focus {
-  outline-color: #f99f2a;
+  outline-color: #098ace;
   background-color: #1f252d;
 }
 
@@ -211,6 +211,6 @@ a.secondary {
 .actions button:hover:disabled,
 .actions button:focus:disabled {
   background: #ccc;
-  color: #979797;
+  color: #ffffff;
   cursor: not-allowed;
 }
