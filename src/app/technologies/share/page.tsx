@@ -1,7 +1,7 @@
-import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
 import { ImagePicker } from "@/_components/ImagePicker";
+import { shareTech } from "@/data/actions";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
@@ -11,24 +11,7 @@ export const metadata: Metadata = {
 export default function SharePage() {
   console.log(": executing Technologies/share ...");
 
-  async function shareTech(formData:FormData) {
-    "use server";
 
-    const tech={
-      // id: formData.get('id'),
-      // slug: formData.get('slug'),
-      title: formData.get('title'),
-      image: formData.get('image'),
-      summary: formData.get('summary'),
-      instructions: formData.get('instructions'),
-      creator: formData.get('creator'),
-      creator_email: formData.get('creator_email'),
-      
-
-    }
-    console.log('tech:')
-    console.log(tech)
-  }
 
   return (
     <div className={styles.page}>
@@ -64,7 +47,12 @@ export default function SharePage() {
                 </p>
                 <p>
                   <label htmlFor="creator_email">Creator email</label>
-                  <input type="email" id="creator_email" name="creator_email" required />
+                  <input
+                    type="email"
+                    id="creator_email"
+                    name="creator_email"
+                    required
+                  />
                 </p>
               </div>
               <p>

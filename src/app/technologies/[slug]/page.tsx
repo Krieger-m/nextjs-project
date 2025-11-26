@@ -21,8 +21,8 @@ export default async function IndividualTechPage({
   console.log(": executing IndividualTechPage ...");
 
   const technology = await getSpecificTech((await params).slug);
-  console.log((await params).slug);
-  console.log(technology);
+  // console.log((await params).slug);
+  // console.log(technology);
 
   return (
     <div className={styles.page}>
