@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
+import { ImagePicker } from "@/_components/ImagePicker";
 
 
 export const metadata: Metadata = {
@@ -64,7 +65,9 @@ export default function SharePage() {
               required
             ></textarea>
           </p>
-          IMAGE PICKER
+          <div className={styles.row}>
+            <ImagePicker label={"image picker"} name={"image"}/>
+          </div>
           <p className={styles.actions}>
             <button type="submit">Share Tech</button>
           </p>
