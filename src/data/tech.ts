@@ -21,3 +21,7 @@ export async function getSpecificTech(slug: string):Promise<TechProps> {
 //   await new Promise((resolve) => setTimeout(resolve, 1000));
   return db.prepare("SELECT * FROM technologies WHERE slug = ?").get(slug) as TechProps;
 }
+
+export async function saveTech(tech:TechProps){
+  
+}
