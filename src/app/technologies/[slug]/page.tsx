@@ -3,14 +3,26 @@ import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
 import Link from "next/link";
 import { DynamicLink } from "@/_components/DynamicLink.client";
+import { getSpecificTech } from "@/data/tech";
+import { RichText } from "@/_components/RichText";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
   description: "Individual Tech Page",
 };
 
-export default function IndividualTechPage() {
+
+
+export default async function IndividualTechPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   console.log(": executing IndividualTechPage ...");
+
+  const technology = await getSpecificTech((await params).slug);
+  console.log((await params).slug);
+  console.log(technology);
 
   return (
     <div className={styles.page}>
@@ -23,23 +35,36 @@ export default function IndividualTechPage() {
             alignItems: "center",
           }}
         >
-          <h1>Individual Tech Page</h1>
+          <h1>{technology.title}</h1>
           <br />
-          <Image
-            src="/assets/Professional-img.png"
-            alt="professional-image"
-            width={270}
-            height={400}
-            priority
-          />
+          <div
+            style={{
+              width: 600,
+              backgroundImage: `url(${technology.image})`,
+              backgroundSize: "cover", // makes it fill the div
+              backgroundPosition: "center", // centers the image
+              backgroundRepeat: "no-repeat", // prevents tiling
+              height: 350,
+            }}
+          ></div>
           <br />
-          <p>the tech ...</p>
+          <p>
+            Made by{" "}
+            <a href={`mailto:${technology.creator_email}`}>
+              {technology.creator}
+            </a>
+          </p>
           <br />
+          <p>{technology.summary}</p>
+          <br />
+          <br />
+          <br />
+          <h2>Instructions</h2>
+          <RichText body={technology.instructions} />
 
-          <DynamicLink
-            link="share"
-            content="👆🏻 click here to share the tech ..."
-          />
+          <Link
+            href="/technologies/share"
+          >👆🏻 click here to share your own ...</Link>
           <br />
         </div>
       </main>
