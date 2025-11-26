@@ -8,7 +8,6 @@ interface NavLinkProps {
 }
 export function NavLink({ target, content }: NavLinkProps) {
   const path = usePathname();
-  console.log(path);
   return (
     <>
       <Link

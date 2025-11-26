@@ -19,7 +19,7 @@ export default function SharePage() {
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "start",
             alignItems: "center",
           }}
         >

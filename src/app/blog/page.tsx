@@ -33,8 +33,6 @@ export default async function BlogsPage() {
     "api/articles",blogsQuery)
   const data = resJson.data; 
 
-  // console.log('data: ')
-  // console.log(data)
 
   return (
     <div className={styles.page}>
