@@ -87,6 +87,10 @@ export default async function TechnologiesPage() {
           >
             <TechLoading />
           </Suspense>
+          <br/>
+          <Link
+            href="/technologies/share"
+          >👆🏻 click here to share your own ...</Link>
         </div>
       </main>
     </div>
