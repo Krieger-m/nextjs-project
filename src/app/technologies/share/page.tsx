@@ -2,6 +2,7 @@ import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
 import { ImagePicker } from "@/_components/ImagePicker";
 import { shareTech } from "@/data/actions";
+import { TechFormSubmitButton } from "@/_components/TechFormSubmitButton";
 
 export const metadata: Metadata = {
   title: "Full-Stack-Project",
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 
 export default function ShareTechPage() {
   console.log(": executing Technologies/share ...");
+
+
 
 
 
@@ -76,7 +79,7 @@ export default function ShareTechPage() {
                 <ImagePicker label={"image picker"} name={"image"} />
               </div>
               <p className={styles.actions}>
-                <button type="submit">Share Tech</button>
+                <TechFormSubmitButton/>
               </p>
             </form>
           </main>
