@@ -23,6 +23,7 @@ export async function shareTech(
     creator_email: formData.get("creator_email"),
   };
 
+      // validating inputs and returning error message if not valid
   if (
     !tech.title ||
     !tech.summary ||
@@ -35,7 +36,7 @@ export async function shareTech(
   }
 
   await saveTech(tech as TechProps);
-    // revalidation in production mode cause pages are only built once and then cached
+    // revalidation in production mode cause pages are only built once (at build-time) and then cached
   revalidatePath('/technologies', 'layout');  
   redirect("/technologies");
 }
