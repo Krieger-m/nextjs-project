@@ -5,13 +5,23 @@ import Link from "next/link";
 import { DynamicLink } from "@/_components/DynamicLink.client";
 import { getSpecificTech } from "@/data/tech";
 import { RichText } from "@/_components/RichText";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Full-Stack-Project",
-  description: "Individual Tech Page",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  
+  const technology = await getSpecificTech((await params).slug);
 
+  if (!technology) return notFound();
 
+  return {
+    title: technology.title,
+    description: technology.summary,
+  };
+}
 
 export default async function IndividualTechPage({
   params,
@@ -23,6 +33,8 @@ export default async function IndividualTechPage({
   const technology = await getSpecificTech((await params).slug);
   // console.log((await params).slug);
   // console.log(technology);
+
+  if (!technology) return notFound();
 
   return (
     <div className={styles.page}>
@@ -62,9 +74,9 @@ export default async function IndividualTechPage({
           <h2>Instructions</h2>
           <RichText body={technology.instructions} />
 
-          <Link
-            href="/technologies/share"
-          >👆🏻 click here to share your own ...</Link>
+          <Link href="/technologies/share">
+            👆🏻 click here to share your own ...
+          </Link>
           <br />
         </div>
       </main>
