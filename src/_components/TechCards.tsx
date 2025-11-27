@@ -2,9 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 export function TechCards({ data }: { data: any[] }) {
-    // const data:any[] = {...techData};
+  // const data:any[] = {...techData};
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        gap: 40,
+        margin: '40px auto'
+      }}
+    >
       {...data.map((item: any, index: number) => (
         <div
           key={index}
@@ -12,7 +20,6 @@ export function TechCards({ data }: { data: any[] }) {
             border: "2px solid white",
             borderRadius: 10,
             padding: 20,
-            marginBottom: 40,
           }}
         >
           <Link

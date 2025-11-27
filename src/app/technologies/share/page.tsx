@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Tecnologies Page",
 };
 
-export default function SharePage() {
+export default function ShareTechPage() {
   console.log(": executing Technologies/share ...");
 
 
