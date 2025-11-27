@@ -1,5 +1,6 @@
 'use server';
 
+import { redirect } from "next/navigation";
 import { saveTech, TechProps } from "./tech";
 
 export async function shareTech(formData: FormData) {
@@ -17,5 +18,7 @@ export async function shareTech(formData: FormData) {
     };
     console.log("tech:");
     console.log(tech);
-    await saveTech(tech as TechProps)
+    await saveTech(tech as TechProps);
+
+    redirect('/technologies');
   }
