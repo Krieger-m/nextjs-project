@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { saveTech, TechProps } from "./tech";
+import { revalidatePath } from "next/cache";
 
 type State = { message: string };
 
@@ -34,5 +35,7 @@ export async function shareTech(
   }
 
   await saveTech(tech as TechProps);
+    // revalidation in production mode cause pages are only built once and then cached
+  revalidatePath('/technologies', 'layout');  
   redirect("/technologies");
 }
