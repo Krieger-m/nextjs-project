@@ -50,47 +50,47 @@ export default async function TechnologiesPage() {
           <br />
           {/* <TechCards data={techData}/> */}
           <Suspense
-            fallback={
-              <>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginTop: 40,
-                    animation: "pulse 1.0s infinite",
-                  }}
-                >
-                  <h1>loading tech ...</h1>
-                  <style>
-                    {`
-                      @keyframes pulse {
-                        0% {
-                          transform: scale(1);
-                          opacity: 1;
-                        }
-                        50% {
-                          transform: scale(1.05);
-                          opacity: 0.7;
-                        }
-                        100% {
-                          transform: scale(1);
-                          opacity: 1;
-                        }
-                      }
-                    `}
-                  </style>
-                </div>
-              </>
-            }
+              fallback={
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        marginTop: 40,
+                        animation: "pulse 1.0s infinite",
+                      }}
+                    >
+                      <h1>loading tech ...</h1>
+                      <style>
+                        {`
+                              @keyframes pulse {
+                                0% {
+                                  transform: scale(1);
+                                  opacity: 1;
+                                }
+                                50% {
+                                  transform: scale(1.05);
+                                  opacity: 0.7;
+                                }
+                                100% {
+                                  transform: scale(1);
+                                  opacity: 1;
+                                }
+                              }
+                            `}
+                      </style>
+                    </div>
+                  </>
+              }
           >
             <TechLoading />
           </Suspense>
-          <br/>
-          <Link
-            href="/technologies/share"
-          >👆🏻 click here to share your own ...</Link>
+          <br />
+          <Link href="/technologies/share">
+            👆🏻 click here to share your own ...
+          </Link>
         </div>
       </main>
     </div>
