@@ -1,5 +1,7 @@
 'use server';
 
+import { saveTech, TechProps } from "./tech";
+
 export async function shareTech(formData: FormData) {
     "use server";
 
@@ -15,4 +17,5 @@ export async function shareTech(formData: FormData) {
     };
     console.log("tech:");
     console.log(tech);
+    await saveTech(tech as TechProps)
   }
