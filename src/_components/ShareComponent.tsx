@@ -1,3 +1,4 @@
+"use client";
 import { shareTech } from "@/data/actions";
 import styles from "@/styles/page.module.css";
 import { useActionState } from "react";

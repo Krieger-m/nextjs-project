@@ -2,9 +2,7 @@ import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import { Metadata } from "next";
 import Link from "next/link";
-import { LinkList } from "@/_components/LinkList";
 import { getTech } from "@/data/tech";
-import { NavLink } from "@/_components/NavLink";
 import { TechCards } from "@/_components/TechCards";
 import { Suspense } from "react";
 
