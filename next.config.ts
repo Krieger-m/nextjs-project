@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
     ],
     domains: ['localhost'],
     unoptimized: true,
+    dangerouslyAllowLocalIP: true
   },
   experimental: {
     // Increase server action body size limit to allow image uploads
