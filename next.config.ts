@@ -13,7 +13,15 @@ const nextConfig: NextConfig = {
         pathname: '/uploads/**',
         
       },
+      {
+        protocol: 'https',
+        hostname: 'localhost',
+        port: '1337',
+        pathname: '/uploads/**',
+        
+      },
     ],
+    domains: ['localhost'],
     unoptimized: true,
   },
   experimental: {
